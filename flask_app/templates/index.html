@@ -10,15 +10,30 @@
 
 <body>
     <h1>Github Finder</h1>
-    <p>Search by name:</p>
-    <form action="/search" id="searchForm" method="post">
-        <div>
-            <label> Enter Name:</label>
-            <input type="text" name="name">
-        </div>
-        <input type="submit" value="search">
-    </form>
-    <div id="searchResult"> </div>
+    <div>
+        <form action="/home" method="POST">
+            <div>
+                <label> Enter Name:</label>
+                <input type="text" name="name">
+            </div>
+            <input type="submit" value="search">
+
+        </form>
+    </div>
+    <div>
+        <ul>
+            {% for user in data %}
+            <li>
+                <div >
+                    <a href="/search?username={{ user.login }}">
+                        <img src="{{user.avatar_url}}" alt="img">
+                    </a>
+                    <a href="/search?username={{user.login}}">{{user.login}}</a>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
 </body>
 
 </html>
