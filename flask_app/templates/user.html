@@ -8,9 +8,7 @@
 </head>
 
 <body>
-
-
-    <!-- <h1> <a href="{{ base_info.avatar_url }}">{{ base_info.avatar_url }}</a></h1> -->
+    
     <img src="{{base_info.avatar_url}}" alt="img">
     <h1> {{ base_info.name }}</h1>
     <h1>{{ base_info.bio }}</h1>
@@ -21,12 +19,10 @@
     <h1>Blog: <a href="{{ base_info.blog }}">{{ base_info.blog}}</a></h1>
     <h1> <a href="{{base_info.html_url }}">Visit GitHub</a></h1>
 
-
-    
     <h1>Repositories : </h1>
 
     <ul>
-        {% for repo in repos_info%}
+        {% for repo in repos_info %}
             <li><a href="{{ repo.html_url }}">{{ repo.name }}</a></li>
         {% endfor %}
     </ul>
