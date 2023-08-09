@@ -20,6 +20,9 @@
 
         </form>
     </div>
+    <div >
+        <h3 style="font-size: 22px;color:rgb(4, 54, 105);">{{ datetoday }} | <span id="clock"></span></h3>
+    </div>
     <div>
         <ul>
             {% for user in data %}
@@ -34,6 +37,13 @@
             {% endfor %}
         </ul>
     </div>
+      <script type="text/javascript">
+        var clockElement = document.getElementById('clock');
+        function clock() {
+            clockElement.textContent = new Date().toString().slice(15, 24);
+        }
+        setInterval(clock, 1000);
+    </script>
 </body>
 
 </html>
