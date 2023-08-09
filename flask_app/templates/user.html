@@ -9,9 +9,8 @@
 
 <body>
     <div >
-        <h3 style="font-size: 22px;color:rgb(7, 40, 138);">{{ datetoday2 }} | <span id="clock"></span></h3>
+        <h3>{{ datetoday2 }} | <span id="clock"></span></h3>
     </div>
-    
     <img src="{{base_info.avatar_url}}" alt="img">
     <h1> {{ base_info.name }}</h1>
     <h1>{{ base_info.bio }}</h1>
@@ -21,9 +20,7 @@
     <h1>Public_repositories : {{ base_info.public_repos}}</h1>
     <h1>Blog: <a href="{{ base_info.blog }}">{{ base_info.blog}}</a></h1>
     <h1> <a href="{{base_info.html_url }}">Visit GitHub</a></h1>
-
     <h1>Repositories : </h1>
-
     <ul>
         {% for repo in repos_info %}
             <li><a href="{{ repo.html_url }}">{{ repo.name }}</a></li>
