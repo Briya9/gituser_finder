@@ -8,6 +8,9 @@
 </head>
 
 <body>
+    <div >
+        <h3 style="font-size: 22px;color:rgb(7, 40, 138);">{{ datetoday2 }} | <span id="clock"></span></h3>
+    </div>
     
     <img src="{{base_info.avatar_url}}" alt="img">
     <h1> {{ base_info.name }}</h1>
@@ -26,6 +29,13 @@
             <li><a href="{{ repo.html_url }}">{{ repo.name }}</a></li>
         {% endfor %}
     </ul>
+     <script type="text/javascript">
+        var clockElement = document.getElementById('clock');
+        function clock() {
+            clockElement.textContent = new Date().toString().slice(15, 24);
+        }
+        setInterval(clock, 1000);
+    </script>
 
 </body>
 
