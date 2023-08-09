@@ -1,12 +1,16 @@
 from flask import request, render_template, jsonify
 from flask_app import app
 import requests
+from datetime import date
 
+
+datetoday = date.today().strftime("%m_%d_%y")
+datetoday2 = date.today().strftime("%d-%B-%Y")
 
 
 @app.route("/")
 def index():
-    return render_template("index.html")
+    return render_template("index.html", datetoday = datetoday ,datetoday2 = datetoday2)
 
 
 @app.route("/home", methods=["GET", "POST"])
